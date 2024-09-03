@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riverpod_files/screens/shared/cart_icon.dart';
 
 class HomeScreen  extends  StatelessWidget {
   const HomeScreen  ({super.key});
@@ -8,21 +9,24 @@ class HomeScreen  extends  StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Garage Sale Products'),
-      //  actions: const[CartIcon()[]],
+      actions: const[ CartIcon()],
       ),
-      body: GridView.builder(
-        itemCount: 8,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 20,
-          crossAxisSpacing: 20,
-          childAspectRatio: 0.9,
-          ), 
-        itemBuilder: (context , index){
-          return Container(
-            color: Colors.blueGrey.withOpacity(0.05),
-          );
-        }),
+      body: Padding(
+      padding: const EdgeInsets.all(20),
+        child: GridView.builder(
+          itemCount: 8,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 20,
+            crossAxisSpacing: 20,
+            childAspectRatio: 0.9,
+            ), 
+          itemBuilder: (context , index){
+            return Container(
+              color: Colors.blueGrey.withOpacity(0.05),
+            );
+          }),
+      ),
     );
   }
 }
