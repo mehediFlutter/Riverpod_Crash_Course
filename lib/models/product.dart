@@ -1,3 +1,6 @@
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+
 class Product {
   Product(
       {required this.id,
@@ -9,3 +12,4 @@ class Product {
   final int price;
   final String image;
 }
+
